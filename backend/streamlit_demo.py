@@ -90,6 +90,7 @@ if page == "Home":
     st.info("Navigate using the sidebar to explore different features.")
 
 # --- Trash Classification ---
+    
 if page == "Trash Classification":
     st.header("🗑️ Trash Classification")
     st.markdown("<p style='text-align:center; color:#adb5bd;'>Upload an image of a waste item for AI classification.</p>", unsafe_allow_html=True)
@@ -97,24 +98,40 @@ if page == "Trash Classification":
     uploaded_file = st.file_uploader("Upload an image of trash", type=['png','jpg','jpeg'])
     if uploaded_file:
         st.image(uploaded_file, caption="Uploaded Trash Image", use_container_width=True)
+
         if st.button("Classify Trash"):
             with st.spinner('AI is classifying the trash...'):
-                time.sleep(2)
-                predicted_class = "Recyclable"
-                confidence = 0.92
-                st.markdown(f"""
-                    <div class="result-card">
-                        <h3>Prediction Result</h3>
-                        <p style="font-size: 1.2rem;">**Class:** <span style="color: #2ecc71;">{predicted_class.upper()}</span></p>
-                        <p style="font-size: 1.2rem;">**Confidence:** <span style="color: #2ecc71;">{confidence:.2f}</span></p>
-                    </div>
-                """, unsafe_allow_html=True)
-                if "recyclable" in predicted_class.lower():
-                    st.info("This item is recyclable! ♻️")
-                elif "compostable" in predicted_class.lower():
-                    st.info("This item is compostable. 🌱")
-                else:
-                    st.warning("This item is general waste. 🚮")
+                try:
+                    # Send file to Flask backend
+                    files = {"file": uploaded_file.getvalue()}
+                    response = requests.post("http://127.0.0.1:5000/classify", files=files)
+
+                    if response.status_code == 200:
+                        result = response.json()
+                        predicted_class = result.get("class", "Unknown")
+                        
+                        st.markdown(f"""
+                            <div class="result-card">
+                                <h3>Prediction Result</h3>
+                                <p style="font-size: 1.2rem;">**Class:** <span style="color: #2ecc71;">{predicted_class.upper()}</span></p>
+                            </div>
+                        """, unsafe_allow_html=True)
+
+                        # Contextual Info
+                        if predicted_class.lower() in ["cardboard", "paper"]:
+                            st.info("This item is recyclable! ♻️")
+                        elif predicted_class.lower() in ["metal", "glass"]:
+                            st.info("This material can be recycled efficiently. 🔄")
+                        elif predicted_class.lower() == "plastic":
+                            st.warning("Plastic detected. Consider recycling responsibly. 🚯")
+                        else:
+                            st.error("This is general waste. 🚮")
+                    else:
+                        st.error(f"Error from Flask server: {response.text}")
+                except requests.exceptions.ConnectionError:
+                    st.error("Flask server not running.")
+                except Exception as e:
+                    st.error(f"Unexpected error: {e}")
 
 # --- Bin Fill Prediction ---
 if page == "Bin Fill Prediction":
