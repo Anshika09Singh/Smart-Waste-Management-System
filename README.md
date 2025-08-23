@@ -10,18 +10,7 @@ Waste management is a critical challenge for modern cities, with inefficient col
 
 By automatically classifying waste, we can make recycling smarter and more accessible for everyone. The system's ability to predict when bins will be full allows for more efficient collection routes, which in turn reduces fuel consumption and minimizes the carbon footprint of waste vehicles. Imagine a city where waste collection is a seamless, data-driven process, ensuring cleaner streets and a healthier planet. This project is a step toward that sustainable future.
 
----
 
-## 📝 Table of Contents
-
-- [About](#about)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Dataset](#dataset)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -62,15 +51,19 @@ This project seamlessly integrates **computer vision** and **predictive analytic
 
 ## 📂 Dataset
 
--   **Trash Classification Dataset:** We used the **TrashNet dataset from Kaggle**, which contains labeled images for six waste categories:
-    -   Cardboard
-    -   Glass
-    -   Metal
-    -   Paper
-    -   Plastic
-    -   Trash
+### Trash Classification Dataset
 
--   **Bin Fill Simulation Dataset:** A synthetic dataset was generated to simulate hourly bin fill levels across various bins (`bin1`, `bin2`, etc.), which was used to train our predictive model.
+We used the **TrashNet dataset** from [Kaggle](https://www.kaggle.com/datasets/asdasdasd/trashnet), which contains labeled images for six waste categories:
+-   Cardboard
+-   Glass
+-   Metal
+-   Paper
+-   Plastic
+-   Trash
+
+### Bin Fill Simulation Dataset
+
+A synthetic dataset was generated to simulate hourly bin fill levels across various bins (`bin1`, `bin2`, etc.), which was used to train our predictive model.
 
 ---
 
