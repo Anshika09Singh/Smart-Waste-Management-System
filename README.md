@@ -98,10 +98,14 @@ Get a copy of the project up and running on your local machine with these simple
 4.  **Run the application:**
     ```bash
     # Start the backend Flask server
-    python app.py
+    python app1.py
     
     # In a new terminal, start the Streamlit frontend
     streamlit run streamlit_demo.py
+    or
+    
+python -m streamlit run  app.py
+    
     ```
     
 ---
