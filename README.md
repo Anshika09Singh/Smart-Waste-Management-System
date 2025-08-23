@@ -43,7 +43,7 @@ This project seamlessly integrates **computer vision** and **predictive analytic
 | :------------------ | :---------------------------------------------------- |
 | **Frontend** | Streamlit, HTML/CSS, Requests, PIL                    |
 | **Backend** | Flask, Flask-CORS                                     |
-| **Machine Learning**| TensorFlow/Keras (CNN), RandomForestRegressor         |
+| **Machine Learning**|open cv,TensorFlow/Keras (CNN), RandomForestRegressor         |
 | **Data Processing** | Pandas, NumPy                                         |
 | **Visualization** | Streamlit Charts                                      |
 
