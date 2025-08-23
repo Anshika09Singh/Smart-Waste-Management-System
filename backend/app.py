@@ -10,14 +10,10 @@ import io
 app = Flask(__name__)
 CORS(app)
 
-# -----------------------------
-# Load ML model
-# -----------------------------
+
 trash_model = load_model('models/trash_classifier.h5')
 
-# -----------------------------
-# Simulated bin fill model
-# -----------------------------
+
 fill_data = pd.DataFrame({
     'hour': np.arange(0, 240),
     'bin1': np.random.randint(0, 100, 240),
@@ -26,9 +22,7 @@ fill_data = pd.DataFrame({
 fill_model = RandomForestRegressor()
 fill_model.fit(fill_data[['hour']], fill_data['bin1'])
 
-# -----------------------------
-# Trash Classification Endpoint
-# -----------------------------
+
 @app.route('/classify', methods=['POST'])
 def classify_trash():
     if 'file' not in request.files:
@@ -46,17 +40,13 @@ def classify_trash():
     
     return jsonify({'class': classes[pred]})
 
-# -----------------------------
-# Fill Level Prediction Endpoint
-# -----------------------------
+
 @app.route('/predict_fill', methods=['GET'])
 def predict_fill():
     future_hours = pd.DataFrame({'hour': np.arange(240, 264)})
     predictions = fill_model.predict(future_hours)
     return jsonify({'predictions': predictions.tolist()})
 
-# -----------------------------
-# Run Flask App
-# -----------------------------
+
 if __name__ == '__main__':
     app.run(debug=True)
