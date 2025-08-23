@@ -1,10 +1,11 @@
 # ♻️ Smart Waste Management System
 
-A **Smart Waste Management System** powered by AI/ML to **classify trash automatically** and **predict bin fill levels** for optimized waste collection. This project aims to reduce carbon footprint, encourage recycling, and improve urban waste management.
+A **Smart Waste Management System** powered by **AI/ML** to **classify trash automatically** and **predict bin fill levels** for optimized waste collection.  
+This project aims to **reduce carbon footprint**, **encourage recycling**, and **improve urban waste management**.  
 
 ---
 
-## 📝 Table of Contents
+## 📝 Table of Contents  
 
 - [About](#about)  
 - [Features](#features)  
@@ -12,95 +13,80 @@ A **Smart Waste Management System** powered by AI/ML to **classify trash automat
 - [Dataset](#dataset)  
 - [Installation](#installation)  
 - [Usage](#usage)  
-- [Screenshots](#screenshots)  
 - [Contributing](#contributing)  
 - [License](#license)  
 
 ---
 
-## 📌 About
+## 📌 About  
 
-This AI-powered system uses **image recognition** to classify trash into categories and **predictive modeling** to forecast bin fill levels. The system consists of a **Flask backend** for ML inference and a **Streamlit frontend** for interactive user experience.
+This project integrates **computer vision** and **predictive analytics** for efficient waste management.  
+It uses a **CNN model** to classify trash into categories and a **bin fill prediction model** to forecast collection needs.  
 
-**Key Objectives:**
-
-- Automatically classify trash into categories.  
-- Predict bin fill levels for efficient waste collection.  
-- Provide visual insights using interactive charts.  
-- Make waste management smarter and eco-friendly.  
-
----
-
-## ✨ Features
-
-1. **Trash Classification**  
-   - Upload images of trash (png, jpg, jpeg).  
-   - AI model predicts the category: `cardboard`, `glass`, `metal`, `paper`, `plastic`, `trash`.  
-
-2. **Bin Fill Prediction**  
-   - Predict fill levels of bins for next hours.  
-   - Interactive charts and progress bars.  
-
-3. **User-friendly Frontend**  
-   - Streamlit app with light theme, modern fonts, hover effects, and animations.  
-   - Navigation tabs for Home, Trash Classification, and Bin Fill Prediction.  
-
-4. **Data Download**  
-   - Export predicted fill levels as CSV.  
-
-5. **Responsive Design**  
-   - Works on desktop and mobile devices.  
+**Objectives:**  
+- Classify waste images into predefined categories.  
+- Predict bin fill levels for optimized collection routes.  
+- Provide an interactive and user-friendly frontend.  
+- Promote sustainable and eco-friendly waste practices.  
 
 ---
 
-## 🛠 Technologies Used
+## ✨ Features  
 
-- **Frontend:** Streamlit, HTML/CSS, PIL, requests  
-- **Backend:** Flask, Flask-CORS  
-- **Machine Learning:** TensorFlow/Keras, RandomForestRegressor  
-- **Data Processing:** Pandas, NumPy  
-- **Visualization:** Streamlit charts  
-
----
-
-## 📂 Dataset
-
-**Trash Classification:**  
-- **TrashNet Dataset (Kaggle):** [https://www.kaggle.com/datasets/asdasdasd/trashnet](https://www.kaggle.com/datasets/asdasdasd/trashnet)  
-
-**Bin Fill Simulation:**  
-- Simulated dataset using hourly bin fill percentages for multiple bins (`bin1`, `bin2`).  
-
-**Categories Used:**  
-- Cardboard  
-- Glass  
-- Metal  
-- Paper  
-- Plastic  
-- Trash  
-
-**Example Images:**  
-- Cardboard: ![Cardboard](https://images.unsplash.com/photo-1581091215364-6f5398f04943?auto=format&fit=crop&w=600&q=80)  
-- Glass: ![Glass](https://images.unsplash.com/photo-1602524207562-1f257f87a7c1?auto=format&fit=crop&w=600&q=80)  
-- Plastic: ![Plastic](https://images.unsplash.com/photo-1584302171419-859d6f80bfb0?auto=format&fit=crop&w=600&q=80)  
-
-*(Add more example images if needed.)*
+- **Trash Classification**: Upload waste images, AI predicts category (cardboard, glass, metal, paper, plastic, trash).  
+- **Bin Fill Prediction**: Forecasts bin fill levels for the next 24 hours.  
+- **Interactive Frontend**: Built with Streamlit for easy navigation.  
+- **Data Export**: Download prediction results as `.csv`.  
+- **Cross-Platform**: Works on desktop and mobile browsers.  
 
 ---
 
-## 💻 Installation
+## 🛠 Technologies Used  
 
-1. Clone the repository:
+- **Frontend**: Streamlit, HTML/CSS, Requests, PIL  
+- **Backend**: Flask, Flask-CORS  
+- **Machine Learning**: TensorFlow/Keras (CNN for classification), RandomForestRegressor (for prediction)  
+- **Data Processing**: Pandas, NumPy  
+- **Visualization**: Streamlit Charts  
 
-```bash
-git clone https://github.com/yourusername/smart-waste-management.git
-cd smart-waste-management
+---
+
+## 📂 Dataset  
+
+- **Trash Classification Dataset**: [TrashNet (Kaggle)](https://www.kaggle.com/datasets/asdasdasd/trashnet)  
+  Contains labeled images for:  
+  - Cardboard  
+  - Glass  
+  - Metal  
+  - Paper  
+  - Plastic  
+  - Trash  
+
+- **Bin Fill Simulation Dataset**:  
+  A synthetic dataset is generated for bin fill levels recorded hourly across bins (`bin1`, `bin2`, etc.).  
+
+---
+
+## 💻 Installation  
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/yourusername/smart-waste-management.git
+   cd smart-waste-management
 
 python -m venv venv
-source venv/bin/activate  # For Linux/macOS
-venv\Scripts\activate     # For Windows
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
 pip install -r requirements.txt
-
 python app.py
-
 streamlit run streamlit_demo.py
+
+🚀 Usage
+
+Open the Streamlit app in the browser.
+
+Go to Trash Classification → upload an image → view predicted category.
+
+Go to Bin Fill Prediction → view forecasted fill levels for bins.
+
+Export results as CSV if needed.
