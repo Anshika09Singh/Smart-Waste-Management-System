@@ -64,6 +64,7 @@ if page == "Home":
             <p style="color:#adb5bd;">Leveraging AI to classify trash and predict bin fill levels for a cleaner, smarter city.</p>
         </div>
     """, unsafe_allow_html=True)
+    
 
     st.markdown("""
         <div style="text-align: center; margin: 2rem 0;">
