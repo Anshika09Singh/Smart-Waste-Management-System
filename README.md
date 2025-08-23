@@ -102,9 +102,10 @@ Get a copy of the project up and running on your local machine with these simple
     
     # In a new terminal, start the Streamlit frontend
     streamlit run streamlit_demo.py
-    or
+    or directlly run
+    python -m streamlit run  app.py
     
-python -m streamlit run  app.py
+
     
     ```
     
