@@ -53,7 +53,7 @@ This project seamlessly integrates **computer vision** and **predictive analytic
 
 ### Trash Classification Dataset
 
-We used the **TrashNet dataset** from [Kaggle](https://www.kaggle.com/datasets/asdasdasd/trashnet), which contains labeled images for six waste categories:
+We used the **TrashNet dataset** from [Kaggle]([https://www.kaggle.com/datasets/asdasdasd/trashnet](https://www.kaggle.com/datasets/feyzazkefe/trashnet)), which contains labeled images for six waste categories:
 -   Cardboard
 -   Glass
 -   Metal
