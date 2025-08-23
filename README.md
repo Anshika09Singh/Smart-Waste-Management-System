@@ -113,11 +113,9 @@ Get a copy of the project up and running on your local machine with these simple
 3.  Go to the **Bin Fill Prediction** tab to view the forecasted fill levels for your bins.
 4.  Download the results in CSV format if needed.
 
----
 
-## 👋 Contributing
 
-We welcome contributions of all kinds! If you have ideas for new features, bug fixes, or improvements, please check out our `CONTRIBUTING.md` file for details on how to get started.
+
 
 ---
 
